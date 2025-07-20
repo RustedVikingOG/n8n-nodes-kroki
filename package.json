@@ -1,19 +1,24 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-kroki",
   "version": "0.1.0",
-  "description": "",
+  "description": "n8n community node for Kroki diagram conversion service",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "kroki",
+    "diagrams",
+    "mermaid",
+    "plantuml",
+    "graphviz"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/RustedVikingOG/n8n-nodes-kroki",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "RustedViking",
+    "email": "vikingsearth@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/RustedVikingOG/n8n-nodes-kroki.git"
   },
   "engines": {
     "node": ">=20.15"
@@ -22,9 +27,9 @@
   "scripts": {
     "build": "npx rimraf dist && tsc && gulp build:icons",
     "dev": "tsc --watch",
-    "format": "prettier nodes credentials --write",
-    "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
+    "format": "prettier nodes --write",
+    "lint": "eslint nodes package.json",
+    "lintfix": "eslint nodes package.json --fix",
     "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
   },
   "files": [
@@ -32,13 +37,9 @@
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
-    "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
-    ],
+    "credentials": [],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/Kroki/Kroki.node.js"
     ]
   },
   "devDependencies": {
@@ -46,6 +47,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^5.0.0",
+    "n8n-workflow": "^1.82.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.2"
   },
